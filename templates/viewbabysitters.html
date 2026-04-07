@@ -1,0 +1,62 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+	<!-- Contact Us -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeInUp">
+                    <div class="section-title">
+                        <h2>View-<span> BabySitter   </span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Address </th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Phone </th>
+                               
+                
+                                <th scope="col">Remove </th>
+                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in result %}
+                            <tr>
+                                <td>{{i.name}}&nbsp;{{i.mname}}&nbsp;{{i.lname}}</td>
+                                <td>{{i.address}}</td>
+                                <td>{{i.age}}</td>
+                                <td>{{i.gender}}</td>
+                                <td>{{i.phone}}</td>
+                                
+                             
+                               
+                                <td><a href="{% url 'deletesitter' id=i.id %}">Remove</a></td>
+                        
+                                </tr>
+                  {% endfor %}
+                                        </tbody>
+                                      </table>
+                </div>
+                <!--/ Contact Form -->
+              
+            </div>
+        </div>
+    </section>
+    <!--/ End Clients Us -->
+<br><br><br>
+<br><br><br>
+<br><br><br>
+{% include 'footer.html' %}
+
+{% endblock %}

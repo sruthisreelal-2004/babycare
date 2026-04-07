@@ -1,0 +1,57 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+	<!-- Contact Us -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeInUp">
+                    <div class="section-title">
+                        <h2>View-<span> Feedbacks   </span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Feedback </th>
+                               
+                               
+                
+                                <!-- <th scope="col">Remove </th> -->
+                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in result %}
+                            <tr>
+                                <td>{{i.pid}}</td>
+                                <td>{{i.feedback}}</td>
+                              
+                             
+                               
+                                <!-- <td><a href="{% url 'deletenutritionist' id=i.id %}">Remove</a></td> -->
+                        
+                                </tr>
+                  {% endfor %}
+                                        </tbody>
+                                      </table>
+                </div>
+                <!--/ Contact Form -->
+              
+            </div>
+        </div>
+    </section>
+    <!--/ End Clients Us -->
+<br><br><br>
+<br><br><br>
+<br><br><br>
+{% include 'footer.html' %}
+
+{% endblock %}

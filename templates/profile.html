@@ -1,0 +1,47 @@
+{% load static %}
+
+{% include 'header.html' %}
+
+
+
+   
+
+    <!-- Services Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <h1 class="display-1 text-primary text-center">Profile</h1>
+            <div class="row">
+			<center>
+                <div class="col-lg-12col-md-6 mb-2">
+				
+                    <div class=" d-flex flex-column justify-content-center px-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                           
+                            <h1 class="display-2 text-white mt-n2 m-0"></h1>
+                        </div>
+                        <h4 class="text-uppercase mb-2">{{res.name}}</h4>
+                        <h5 class="m-0">Age:{{res.age}}</h5>
+                        <h5 class="m-0">Description:{{res.description}}</h5>
+                        <h5 class="m-0">Date:{{res.date}}</h5>
+                        <h5 class="m-0">Gender:{{res.gender}}</h5>
+
+                        
+
+                    </div>
+                    <a href="updateusrpr/{{res.id}}" class="btn btn-primary py-2 px-3">Edit</a>
+				
+                </div>
+              </center>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+
+    
+
+
+
+    <!-- Vendor End -->
+
+{% include 'footer.html' %}

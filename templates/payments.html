@@ -1,0 +1,90 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+<section id="contact" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wow fadeInUp">
+                <div class="section-title">
+                    <h2>View-<span> Requests Status  </span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Doctor Requests -->
+            <h4>Doctor Requests</h4>
+            <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Baby Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Amount to pay</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in result %}
+                        <tr>
+                            <td>{{i.id}}</td>
+                            <td>{{i.name}}</td>
+                            <td>{{i.age}}</td>
+                            <td>{{i.location}}</td>
+                            <td>{{i.gender}}</td>
+                            <td>{{i.date}}</td>
+                            <td>{{i.basicpay}}</td>
+                            <td>{{i.status}}</td>
+                            <td><a href="{% url 'dpay' i.id %}">Pay</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- Nutrition Requests -->
+            <h4>Nutrition Requests</h4>
+            <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Baby Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Amount to pay</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for j in result1 %}
+                        <tr>
+                            <td>{{j.id}}</td>
+                            <td>{{j.name}}</td>
+                            <td>{{j.age}}</td>
+                            <td>{{j.location}}</td>
+                            <td>{{j.gender}}</td>
+                            <td>{{j.date}}</td>
+                            <td>{{j.basicpay}}</td>
+                            <td>{{j.status}}</td>
+                            <td><a href="{% url 'pay' j.id %}">Pay</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'footer.html' %}
+
+{% endblock %}

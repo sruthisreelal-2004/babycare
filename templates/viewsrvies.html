@@ -1,0 +1,52 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+	<!-- Contact Us -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeInUp">
+                    <div class="section-title">
+                        <h2>View-<span> Services   </span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+               
+                <!-- Start Service -->
+		<section id="service" class="section clearfix">
+			<div class="container">
+				<div class="row">
+					
+				</div>
+				<div class="row">
+					{% for i in result %}
+					<!-- Single Service -->
+					<div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="single-service">
+							<div class="number"><p>{{forloop.counter}}</p></div>
+							<h4>{{i.name}}</h4>
+							<h6>{{i.typee}}</h6>
+							<p>{{i.description}}</p>
+							<i class="ico-bg fa fa-pencil"></i>
+						</div>
+					</div>
+					<!--/ End Single Service -->
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+		<!--/ End Service -->
+              
+            </div>
+        </div>
+    </section>
+    <!--/ End Clients Us -->
+<br><br><br>
+<br><br><br>
+<br><br><br>
+{% include 'footer.html' %}
+
+{% endblock %}

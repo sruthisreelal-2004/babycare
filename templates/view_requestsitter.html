@@ -1,0 +1,72 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+	<!-- Contact Us -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeInUp">
+                    <div class="section-title">
+                        <h2>View-Baby Sitter<span> Request Status  </span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col"> Id</th>
+                                <th scope="col">Parent </th>
+                                <th scope="col">Baby Name</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Location </th>
+                            
+                                <th scope="col">Gender </th>
+                                <th scope="col">Date From</th>
+                                <th scope="col">Date To</th>
+                
+                                <th scope="col">Status </th>
+                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in result %}
+                            <tr>
+                                <td>{{i.id}}</td>
+                                <td>{{i.p_id}}</td>
+                                <td>{{i.name}}</td>
+                                <td>{{i.age}}</td>
+                                <td>{{i.location}}</td>
+                                
+                                <td>{{i.gender}}</td>
+                                <td>{{i.date_frm}}</td>
+                                <td>{{i.date_to}}</td>
+                                  
+                              
+                             
+                             <td>{{i.status}}</td>
+                               
+                               
+                                                  
+                  
+                                          </tr>
+                  {% endfor %}
+                                        </tbody>
+                                      </table>
+                </div>
+                <!--/ Contact Form -->
+              
+            </div>
+        </div>
+    </section>
+    <!--/ End Clients Us -->
+<br><br><br>
+<br><br><br>
+<br><br><br>
+{% include 'footer.html' %}
+
+{% endblock %}

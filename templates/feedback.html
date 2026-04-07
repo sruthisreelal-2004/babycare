@@ -1,0 +1,49 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+	<!-- Contact Us -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeInUp">
+                    <div class="section-title">
+                        <h2>Add-<span>Feedback   </span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-md-8 col-sm-12 col-xs-12 wow fadeInUp">
+                    <form class="form" method="post" action="addfeedback">
+                        {% csrf_token %}
+                       
+                        <div class="form-group">
+                            <i class="fa fa-address-book"></i>
+                            <textarea name="feedback" rows="6" placeholder="Feedback" ></textarea>
+                        </div>
+                        
+                        <div class="form-group">	
+                            <button type="submit" class="button primary"><i class="fa fa-send"></i>Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!--/ Contact Form -->
+                <!-- Google Map --><br><br>
+                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp">
+                    <div class="contact-map">
+                        <div class="single-client">
+                            <img src="static/images/1.jpg" alt="" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+                <!--/ End Google Map -->
+            </div>
+        </div>
+    </section>
+    <!--/ End Clients Us -->
+
+{% include 'footer.html' %}
+
+{% endblock %}

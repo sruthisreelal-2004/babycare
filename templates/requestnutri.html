@@ -1,0 +1,91 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+	<!-- Contact Us -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeInUp">
+                    <div class="section-title">
+                        <h2>ADD-<span>Request   </span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-md-8 col-sm-12 col-xs-12 wow fadeInUp">
+                    <form class="form" method="post" action="addreqnutri">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="n_id" hidden placeholder="" value="{{result.id}}" required="required">
+                            <input type="text" name="daycare_id" hidden placeholder="" value="{{result.daycare_id}}" required="required">
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="status" hidden value="pending" required="required">
+                        </div>
+                        <div class="form-group">
+                            <p>Basic Pay</p>
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="basicpay" value="500" readonly required="required">
+                        </div>
+                       
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="name" placeholder="Baby Name" required="required">
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="age" placeholder="Age" required="required">
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <select class="form-control" required  name="gender">
+                                <option value="none" selected>&nbsp;&nbsp; &nbsp; &nbsp;Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="location" placeholder="Location" required="required">
+                        </div>
+                        <div class="form-group">
+                            <p>Date and Time for consultation</p>
+                            <i class="fa fa-user"></i>
+                            <input type="datetime-local" name="date" placeholder="" required="required">
+                        </div>
+                       
+                       
+                        <div class="form-group">
+                            <i class="fa fa-address-book"></i>
+                            <textarea name="message" rows="6" placeholder="Message/Issue" ></textarea>
+                        </div>
+                      
+                        <div class="form-group">	
+                            <button type="submit" class="button primary"><i class="fa fa-send"></i>Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!--/ Contact Form -->
+                <!-- Google Map --><br><br>
+                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp">
+                    <div class="contact-map">
+                        <div class="single-client">
+                            <img src="../static/images/1.jpg" alt="" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+                <!--/ End Google Map -->
+            </div>
+        </div>
+    </section>
+    <!--/ End Clients Us -->
+
+{% include 'footer.html' %}
+
+{% endblock %}

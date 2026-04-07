@@ -1,0 +1,156 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+{% if message1 %}
+<script>
+	alert('{{message1}}')
+</script>
+{% endif %}
+{% if message2 %}
+<script>
+	alert('{{message2}}')
+</script>
+{% endif %}
+		<!-- Start Slider -->
+		<section id="j-slider" class="clearfix">
+			<div id="particles-js"></div>
+			<div class="slide-main">
+				<!-- Single Slider --> 
+				<div class="single-slider" style="background-image:url(../static/images/1.jpg);" >
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="slide-text left">
+									<h1><span>We Are Always</span>Take care for your babies</h1>
+									<div class="slide-button">
+										<!-- <a href="login" class="button hvr-bounce-to-top">Login Now</a>
+										<a href="parentreg" class="button hvr-bounce-to-top primary">Register</a> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/ End Single Slider -->
+				<!-- Single Slider -->
+				<div class="single-slider" style="background-image:url(../static/images/2.jpg);" >
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="slide-text center">
+									<h1><span>We Are Always</span>Take care for your babies</h1>
+									
+									<div class="slide-button">
+										<!-- <a href="login" class="button hvr-bounce-to-top">Login Now</a>
+										<a href="parentreg" class="button hvr-bounce-to-top primary">Register</a> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/ End Single Slider -->
+				<!-- Single Slider -->
+				<div class="single-slider" style="background-image:url(../static/images/3.jpg);" >
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="slide-text right">
+									<h1><span>We Are Always</span>Take care for your babies</h1>
+									<div class="slide-button">
+										<!-- <a href="login" class="button hvr-bounce-to-top">Login Now</a>
+										<a href="parentreg" class="button hvr-bounce-to-top primary">Register</a> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/ End Single Slider -->
+			</div>
+		</section>
+		<!--/ End Slider -->
+
+		<!-- Start Statics -->
+		<div id="statics">
+			<div class="container">
+				<div class="row  no-margin">
+					<div class="statics">	
+						<!-- Static Single -->
+						<div class="col-md-4 col-sm-4 col-xs-12 static-single">
+							<div class="icon">
+								<i class="fa fa-check"></i>
+							</div>
+							<div class="s-info">
+								<div class="number"><span class="counter">15500</span></div>
+								<p>Project Complete</p>
+							</div>
+						</div>
+						<!-- End Single -->
+						<!-- Static Single -->
+						<div class="col-md-4 col-sm-4 col-xs-12  static-single active">
+							<div class="icon">
+								<i class="fa fa-check"></i>
+							</div>
+							<div class="s-info">
+								<div class="number"><span class="counter">5500</span></div>
+								<p>Satisfied Clients</p>
+							</div>
+						</div>
+						<!-- End Single -->
+						<!-- Static Single -->
+						<div class="col-md-4 col-sm-4 col-xs-12  static-single">
+							<div class="icon">
+								<i class="fa fa-check"></i>
+							</div>
+							<div class="s-info">
+								
+								<div class="number"><span class="counter">100</span></div>
+								
+								<p>Register User</p>
+							</div>
+						</div>
+						<!-- End Single -->
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!--/ End Statics -->
+		
+		
+		<!-- Start Service -->
+		<section id="service" class="section clearfix">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow fadeInUp">
+						<div class="section-title">
+							<h2>Service We <span>Provide</span></h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					{% for i in result %}
+					<!-- Single Service -->
+					<div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="single-service">
+							<div class="number"><p>{{i.id}}</p></div>
+							<h4>{{i.name}}</h4>
+							<h6>{{i.typee}}</h6>
+							<p>{{i.description}}</p>
+							<i class="ico-bg fa fa-pencil"></i>
+						</div>
+					</div>
+					<!--/ End Single Service -->
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+		<!--/ End Service -->
+				
+		
+		    
+		{% include 'footer.html' %}
+
+		{% endblock %}

@@ -1,0 +1,70 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+	<!-- Contact Us -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeInUp">
+                    <div class="section-title">
+                        <h2>ADD-<span>Attendance   </span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-md-8 col-sm-12 col-xs-12 wow fadeInUp">
+                    <form class="form" method="post" action="addattendance">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="b_id" hidden placeholder="" value="{{result.id}}" required="required">
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="p_id" hidden placeholder="" value="{{result.pid}}" required="required">
+                        </div>
+                       
+                       
+                       
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="date" name="date"  required="required">
+                        </div>
+                      
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <select class="form-control" required  name="status">
+                                <option value="none" selected>&nbsp;&nbsp; &nbsp; &nbsp;Attendance</option>
+                                <option value="present">Present</option>
+                                <option value="absent">Absent</option>
+                                <option value="Half Day">Half Day</option>
+                            </select>
+                        </div>
+                       
+                      
+                        <div class="form-group">	
+                            <button type="submit" class="button primary"><i class="fa fa-send"></i>Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!--/ Contact Form -->
+                <!-- Google Map --><br><br>
+                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp">
+                    <div class="contact-map">
+                        <div class="single-client">
+                            <img src="../static/images/1.jpg" alt="" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+                <!--/ End Google Map -->
+            </div>
+        </div>
+    </section>
+    <!--/ End Clients Us -->
+
+{% include 'footer.html' %}
+
+{% endblock %}
